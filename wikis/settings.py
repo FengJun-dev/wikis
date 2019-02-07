@@ -48,7 +48,6 @@ ROBOTSTXT_OBEY = True
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
    'wikis.user_agent.WikiRandomUserAgentMiddleware': 543,
-   'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
 }
 RANDOM_UA_TYPE = 'random'
 

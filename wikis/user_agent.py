@@ -4,7 +4,7 @@ from fake_useragent import UserAgent
 class WikiRandomUserAgentMiddleware(object):
     def __init__(self, crawler):
         super(WikiRandomUserAgentMiddleware, self).__init__()
-        self.ua = UserAgent()
+        self.ua = UserAgent(verify_ssl=False)
         self.ua_type = crawler.settings.get('RANDOM_UA_TYPE', 'random')
 
     @classmethod

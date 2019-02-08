@@ -12,8 +12,5 @@ class WikiRandomUserAgentMiddleware(object):
         return cls(crawler)
 
     def process_request(self, request, spider):
-        def get_ua():
-            return getattr(self.ua, self.ua_type)
-
-        user_agent_random = get_ua()
-        request.headers.setdefault('User-Agent', user_agent_random)
+        random_user_agent = getattr(self.ua, self.ua_type)
+        request.headers.setdefault('User-Agent', random_user_agent)

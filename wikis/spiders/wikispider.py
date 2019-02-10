@@ -58,6 +58,9 @@ class WikiSpider(scrapy.Spider):
         )
 
     def parse_single_artile(self, response):
+        category_url = response.meta['category_url']
+        book_url = response.meta['book_url']
+
         book_name = response.meta['book_name']
 
         current_url = unquote(response.url)

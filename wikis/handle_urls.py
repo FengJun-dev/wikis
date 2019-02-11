@@ -1,8 +1,7 @@
-def get_article_url(article_id, article_url_list):
-    url = article_url_list[article_id]
-    return url
+def set_start_urls():
+    pass
 
 
-def get_book_url(book_id, book_url_list):
-    url = book_url_list[book_id]
+def get_url(id, url_list):
+    url = url_list[id]
     return url

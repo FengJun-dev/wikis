@@ -1,5 +1,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -13,7 +15,7 @@ class Book(Base):
     author = Column(String)
 
     def __repr__(self):
-        pass
+        return f'{self.name} : {self.author}'
 
 
 class Article(Base):
@@ -24,6 +26,9 @@ class Article(Base):
     content = Column(String)
     comment = Column(String)
     quality = Column(String)
+    book_id = Column(Integer, ForeignKey('books.id'))
+
+    book = relationship("Book", back_populates="article")
 
     def __repr__(self):
-        pass
+        return f'{self.book} - {self.title}'

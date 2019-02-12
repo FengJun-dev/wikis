@@ -14,10 +14,6 @@ class WikisItem(scrapy.Item):
     comment = scrapy.Field(
         input_processor=MapCompose(),
     )
-    page = scrapy.Field(
-        input_processor=MapCompose(),
-        output_processor=TakeFirst(),
-    )
     main_category = scrapy.Field(
         input_processor=MapCompose(),
         output_processor=TakeFirst(),
@@ -26,15 +22,8 @@ class WikisItem(scrapy.Item):
         input_processor=MapCompose(),
         output_processor=TakeFirst(),
     )
-    en_category = scrapy.Field(
-        input_processor=MapCompose(),
-        output_processor=TakeFirst(),
-    )
     book = scrapy.Field(
         input_processor=MapCompose(),
-        output_processor=TakeFirst(),
-    )
-    sub_category = scrapy.Field(
         output_processor=TakeFirst(),
     )
     article_id = scrapy.Field(
